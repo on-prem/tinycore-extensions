@@ -1,0 +1,19 @@
+#!/bin/sh
+
+# By bmarkus May 4, 2013
+# Edited by aw - August 26, 2015
+
+[  -d /usr/local/etc/ssl/crl ] || mkdir -p /usr/local/etc/ssl/crl
+[  -d /usr/local/etc/ssl/newcerts ] || mkdir -p /usr/local/etc/ssl/newcerts
+
+[  -f /usr/local/etc/ssl/index.txt ] || touch /usr/local/etc/ssl/index.txt
+[  -f /usr/local/etc/ssl/serial ] || echo "01" > /usr/local/etc/ssl/serial
+[  -f /usr/local/etc/ssl/crlnumber ] || echo "01" > /usr/local/etc/ssl/crlnumber
+
+ln -sf /usr/local/etc/pki/certs/cacert.pem /usr/local/etc/ssl/cacert.pem
+ln -sf /usr/local/etc/pki/certs/ca-bundle.crt /usr/local/etc/ssl/certs/ca-certificates.crt
+
+ln -sf /usr/local/etc/ssl /etc/ssl
+
+[  -d /usr/local/ssl ] || mkdir -p /usr/local/ssl
+ln -sf /usr/local/etc/ssl/openssl.cnf /usr/local/ssl/openssl.cnf
