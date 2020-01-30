@@ -4,7 +4,7 @@ include config.make
 
 .PHONY: all setup build
 
-all: setup deps build perms tcz
+all: setup deps build tcz
 
 setup:
 		curl -L -o $(package_name) $(package_source)

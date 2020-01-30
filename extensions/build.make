@@ -15,7 +15,6 @@ deps:
 
 tcz:
 		cd $(artifact) && \
-		sudo chown -R 0:0 $(package) && \
 		sudo mksquashfs $(package) $(package).tcz -b 4096 && \
 		md5sum $(package).tcz > $(package).tcz.md5.txt && \
 		sha256sum $(package).tcz > $(package).tcz.sha256.txt && \
@@ -26,7 +25,6 @@ tcz:
 
 tcz-%:
 		cd $(artifact) && \
-		sudo chown -R 0:0 $(package)-$* && \
 		sudo mksquashfs $(package)-$* $(package)-$*.tcz -b 4096 && \
 		md5sum $(package)-$*.tcz > $(package)-$*.tcz.md5.txt && \
 		sha256sum $(package)-$*.tcz > $(package)-$*.tcz.sha256.txt && \
