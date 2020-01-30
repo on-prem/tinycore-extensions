@@ -12,7 +12,7 @@ setup:
 
 build:
 		sudo pip3 install ansible==2.7
-		cd $(package_name) && \
+		cd $(package)-$(VERSION) && \
 		make all PREFIX_DIR=$(artifact)/$(package)
 
 include ../build.make
