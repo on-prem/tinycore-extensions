@@ -36,6 +36,7 @@ tcz-%:
 
 perms:
 		cd $(artifact) && \
+		sudo chown -R 0:0 $(package) && \
 		find $(package) -type d | xargs -r chmod -v 755 && \
 		find $(package) | xargs file | grep ELF | cut -f 1 -d : | xargs -r chmod -v 755 && \
 		find $(package) | xargs file | grep ELF | cut -f 1 -d : | xargs -r strip --strip-unneeded
