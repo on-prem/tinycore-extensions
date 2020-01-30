@@ -14,6 +14,6 @@ build:
 		sudo pip3 install ansible==2.7
 		sudo ln -sf /usr/local/bin/python3 /usr/bin/python
 		cd $(package)-$(VERSION) && \
-		make all PREFIX_DIR=$(artifact)/$(package)
+		sudo make all PREFIX_DIR=$(artifact)/$(package)
 
 include ../build.make
