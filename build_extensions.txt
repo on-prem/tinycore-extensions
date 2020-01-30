@@ -1,4 +1,1 @@
-nginx
-curl
-openssl
-openssh
+jidoteki-admin
