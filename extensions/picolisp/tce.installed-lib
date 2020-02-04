@@ -1,0 +1,5 @@
+#!/bin/sh
+
+# Edited by aw - September 13, 2015
+
+ln -sf /usr/local/share/picolisp/bin/pil /usr/bin
