@@ -15,7 +15,7 @@ build:
 			$(artifact)/$(package)/usr/local/share/picolisp/bin \
 			$(artifact)/$(package)/usr/local/share/licences/picolisp \
 			$(artifact)/$(package)
-		ls -lah /usr/bin/*
+		/usr/local/tce.installed/picolisp
 		cd picoLisp/src64 && \
 		$(MAKE)
 		cd picoLisp && \

@@ -27,7 +27,7 @@ jobs:
         if: env.build_extension == matrix.extension
         id: tcz
         run: |
-          tce-load -wil git compiletc coreutils
+          tce-load -wicl git compiletc coreutils
           cd ${GITHUB_WORKSPACE}/extensions/${{ matrix.extension }}
           make TC_VERSION=${{ matrix.tc_version }}
 
