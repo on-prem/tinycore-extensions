@@ -11,7 +11,7 @@ artifact := $(HOME)/artifacts/$(package)-tc$(TC_VERSION)
 
 deps:
 		sudo rm -rf $(artifact)
-		tce-load -wicl $(compile_deps)
+		tce-load -wil $(compile_deps)
 
 tcz:
 		cd $(artifact) && \
