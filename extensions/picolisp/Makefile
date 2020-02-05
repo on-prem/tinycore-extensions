@@ -10,11 +10,10 @@ setup:
 		curl -L -o $(package_name) $(package_source)
 		tar -xzf $(package_name)
 		curl -L -o ../picolisp.tcz http://repo.tinycorelinux.net/10.x/x86_64/tcz/picolisp.tcz
+		curl -L -o ../picolisp-lib.tcz http://repo.tinycorelinux.net/10.x/x86_64/tcz/picolisp-lib.tcz
 		curl -L -O http://repo.tinycorelinux.net/10.x/x86_64/tcz/ipv6-4.19.10-tinycore64.tcz
 		curl -L -O http://repo.tinycorelinux.net/10.x/x86_64/tcz/netfilter-4.19.10-tinycore64.tcz
-		tce-load -icl ../picolisp.tcz
-		tce-load -icl ./ipv6-4.19.10-tinycore64.tcz
-		tce-load -icl ./netfilter-4.19.10-tinycore64.tcz
+		tce-load -icl ../picolisp.tcz ../picolisp-lib.tcz ./ipv6-4.19.10-tinycore64.tcz ./netfilter-4.19.10-tinycore64.tcz
 
 build:
 		mkdir -p $(artifact)/$(package)/usr/local/tce.installed \
