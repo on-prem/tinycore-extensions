@@ -16,5 +16,6 @@ build:
 		sudo ln -sf /usr/local/bin/python3 /usr/bin/python
 		cd $(package)-$(VERSION) && \
 		make all PREFIX_DIR=$(artifact)/$(package)
+		cp -v $(package).tcz.dep $(artifact)
 
 include ../build.make

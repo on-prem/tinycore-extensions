@@ -26,6 +26,7 @@ build:
 		cd picoLisp && \
 		mv -v bin/picolisp $(artifact)/$(package)/usr/local/share/picolisp/bin && \
 		mv -v COPYING $(artifact)/$(package)/usr/local/share/licences/picolisp
+		cp -v $(package).tcz.dep $(artifact)
 		cp -v tce.installed $(artifact)/$(package)/usr/local/tce.installed/$(package)
 
 build-doc:
@@ -43,6 +44,7 @@ build-lib:
 		sudo mv -v app bin cygwin ersatz games img lib loc misc opt src64 test $(artifact)/$(package)-lib/usr/local/share/picolisp && \
 		sudo mv -v dbg.l ext.l lib.css lib.l pil $(artifact)/$(package)-lib/usr/local/share/picolisp
 		sudo cp -v tce.installed-lib $(artifact)/$(package)-lib/usr/local/tce.installed/$(package)-lib
+		cp -v $(package)-lib.tcz.dep $(artifact)
 		$(MAKE) tcz-lib
 
 include ../build.make
