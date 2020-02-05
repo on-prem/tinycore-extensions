@@ -34,7 +34,7 @@ build-doc:
 		sudo mv -v man $(artifact)/$(package)-doc/usr/local/share && \
 		sudo mv -v doc doc64 $(artifact)/$(package)-doc/usr/local/share/doc/picolisp && \
 		sudo mv -v CHANGES CREDITS INSTALL README $(artifact)/$(package)-doc/usr/local/share/doc/picolisp
-		sudo make tcz-doc
+		$(MAKE) tcz-doc
 
 build-lib:
 		sudo mkdir -p $(artifact)/$(package)-lib/usr/local/tce.installed \
@@ -43,6 +43,6 @@ build-lib:
 		sudo mv -v app bin cygwin ersatz games img lib loc misc opt src64 test $(artifact)/$(package)-lib/usr/local/share/picolisp && \
 		sudo mv -v dbg.l ext.l lib.css lib.l pil $(artifact)/$(package)-lib/usr/local/share/picolisp
 		sudo cp -v tce.installed-lib $(artifact)/$(package)-lib/usr/local/tce.installed/$(package)-lib
-		sudo make tcz-lib
+		$(MAKE) tcz-lib
 
 include ../build.make
