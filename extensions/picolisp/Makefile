@@ -29,7 +29,7 @@ build:
 		cp -v tce.installed $(artifact)/$(package)/usr/local/tce.installed/$(package)
 
 build-doc:
-		mkdir -p $(artifact)/$(package)-doc/usr/local/share/doc/picolisp
+		sudo mkdir -p $(artifact)/$(package)-doc/usr/local/share/doc/picolisp
 		cd picoLisp && \
 		sudo mv -v man $(artifact)/$(package)-doc/usr/local/share && \
 		sudo mv -v doc doc64 $(artifact)/$(package)-doc/usr/local/share/doc/picolisp && \
@@ -37,11 +37,12 @@ build-doc:
 		$(MAKE) tcz-doc
 
 build-lib:
-		mkdir -p $(artifact)/$(package)-lib/usr/local/share/picolisp
+		sudo mkdir -p $(artifact)/$(package)-lib/usr/local/tce.installed \
+			$(artifact)/$(package)-lib/usr/local/share/picolisp
 		cd picoLisp && \
 		sudo mv -v app bin cygwin ersatz games img lib loc misc opt src64 test $(artifact)/$(package)-lib/usr/local/share/picolisp && \
 		sudo mv -v dbg.l ext.l lib.css lib.l pil $(artifact)/$(package)-lib/usr/local/share/picolisp
-		cp -v tce.installed-lib $(artifact)/$(package)-lib/usr/local/tce.installed/$(package)
+		cp -v tce.installed-lib $(artifact)/$(package)-lib/usr/local/tce.installed/$(package)-lib
 		$(MAKE) tcz-lib
 
 include ../build.make
