@@ -5,4 +5,4 @@ package := picolisp
 package_name := $(package)-$(VERSION).tgz
 package_source := https://software-lab.de/picoLisp-19.12.tgz
 package_license := "picolisp"
-compile_deps := perl5 squashfs-tools curl ipv6-4.19.10-tinycore64 netfilter-4.19.10-tinycore64
+compile_deps := perl5 squashfs-tools
