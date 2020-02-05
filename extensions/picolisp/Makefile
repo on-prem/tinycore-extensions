@@ -9,7 +9,8 @@ all: setup deps build perms build-doc build-lib tcz
 setup:
 		curl -L -o $(package_name) $(package_source)
 		tar -xzf $(package_name)
-		touch /usr/local/tce.installed/ipv6-`uname -r`
+		curl -L -O http://repo.tinycorelinux.net/10.x/x86_64/tcz/picolisp.tcz
+		tce-load -wicl ./picolisp.tcz
 
 build:
 		mkdir -p $(artifact)/$(package)/usr/local/tce.installed \
