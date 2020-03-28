@@ -19,13 +19,13 @@ build:
 
 build-doc:
 		mkdir -p $(artifact)/$(package)-doc/usr/local
-		mv $(artifact)/$(package)/usr/local/share $(artifact)/$(package)-doc/usr/local
+		sudo mv $(artifact)/$(package)/usr/local/share $(artifact)/$(package)-doc/usr/local
 		$(MAKE) tcz-doc
 
 build-dev:
 		mkdir -p $(artifact)/$(package)-dev/usr/local/lib
-		mv $(artifact)/$(package)/usr/local/include $(artifact)/$(package)-dev/usr/local
-		mv $(artifact)/$(package)/usr/local/lib/pkgconfig $(artifact)/$(package)-dev/usr/local/lib
+		sudo mv $(artifact)/$(package)/usr/local/include $(artifact)/$(package)-dev/usr/local
+		sudo mv $(artifact)/$(package)/usr/local/lib/pkgconfig $(artifact)/$(package)-dev/usr/local/lib
 		$(MAKE) tcz-dev
 
 include ../build.make
