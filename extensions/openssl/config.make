@@ -1,8 +1,8 @@
 # Config values
 
-VERSION ?= 1.0.2u
+VERSION ?= 1.1.1e
 package := openssl
 package_name := $(package)-$(VERSION).tar.gz
-package_source := https://www.openssl.org/source/old/1.0.2/openssl-1.0.2u.tar.gz
+package_source := https://www.openssl.org/source/$(package_name)
 package_license := "OpenSSL"
 compile_deps := perl5 squashfs-tools curl

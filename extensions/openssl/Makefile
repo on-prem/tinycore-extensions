@@ -13,7 +13,7 @@ setup:
 build:
 		mkdir -p $(artifact)/$(package)/usr/local/tce.installed
 		cd $(package)-$(VERSION) && \
-		./config --prefix=/usr/local --openssldir=/usr/local/etc/ssl zlib shared && \
+		./config --prefix=/usr/local --openssldir=/usr/local/etc/ssl shared zlib-dynamic no-ssl3 && \
 		$(MAKE) -j 4 && \
 		$(MAKE) install INSTALL_PREFIX=$(artifact)/$(package)
 		cp -v tce.installed $(artifact)/$(package)/usr/local/tce.installed/$(package)
@@ -21,14 +21,14 @@ build:
 
 build-doc:
 		mkdir -p $(artifact)/$(package)-doc/usr/local/share
-		mv $(artifact)/$(package)/usr/local/etc/ssl/man $(artifact)/$(package)-doc/usr/local/share
+		sudo mv $(artifact)/$(package)/usr/local/etc/ssl/man $(artifact)/$(package)-doc/usr/local/share
 		$(MAKE) tcz-doc
 
 build-dev:
 		mkdir -p $(artifact)/$(package)-dev/usr/local/lib
-		mv $(artifact)/$(package)/usr/local/include $(artifact)/$(package)-dev/usr/local
-		mv $(artifact)/$(package)/usr/local/lib/*.a $(artifact)/$(package)-dev/usr/local/lib
-		mv $(artifact)/$(package)/usr/local/lib/pkgconfig $(artifact)/$(package)-dev/usr/local/lib
+		sudo mv $(artifact)/$(package)/usr/local/include $(artifact)/$(package)-dev/usr/local
+		sudo mv $(artifact)/$(package)/usr/local/lib/*.a $(artifact)/$(package)-dev/usr/local/lib
+		sudo mv $(artifact)/$(package)/usr/local/lib/pkgconfig $(artifact)/$(package)-dev/usr/local/lib
 		$(MAKE) tcz-dev
 
 include ../build.make
