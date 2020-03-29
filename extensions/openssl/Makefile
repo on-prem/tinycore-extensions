@@ -21,7 +21,8 @@ build:
 
 build-doc:
 		mkdir -p $(artifact)/$(package)-doc/usr/local/share
-		sudo mv $(artifact)/$(package)/usr/local/etc/ssl/man $(artifact)/$(package)-doc/usr/local/share
+		sudo mv $(artifact)/$(package)/usr/local/share/man $(artifact)/$(package)-doc/usr/local/share
+		sudo mv $(artifact)/$(package)/usr/local/share/doc $(artifact)/$(package)-doc/usr/local/share
 		$(MAKE) tcz-doc
 
 build-dev:
