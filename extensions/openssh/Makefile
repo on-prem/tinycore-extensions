@@ -21,7 +21,7 @@ build:
 
 build-doc:
 		mkdir -p $(artifact)/$(package)-doc/usr/local
-		mv $(artifact)/$(package)/usr/local/share $(artifact)/$(package)-doc/usr/local
+		sudo mv $(artifact)/$(package)/usr/local/share $(artifact)/$(package)-doc/usr/local
 		$(MAKE) tcz-doc
 
 include ../build.make
