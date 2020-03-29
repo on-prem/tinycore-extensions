@@ -15,7 +15,7 @@ build:
 		cd $(package)-$(VERSION) && \
 		./config --prefix=/usr/local --openssldir=/usr/local/etc/ssl shared zlib-dynamic no-ssl3 && \
 		$(MAKE) -j 4 && \
-		$(MAKE) install INSTALL_PREFIX=$(artifact)/$(package)
+		$(MAKE) install DESTDIR=$(artifact)/$(package)
 		cp -v tce.installed $(artifact)/$(package)/usr/local/tce.installed/$(package)
 		cp -v $(package).cnf $(artifact)/$(package)/usr/local/etc/ssl
 
