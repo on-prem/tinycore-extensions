@@ -12,7 +12,7 @@ setup:
 
 build:
 		cd $(package)-$(VERSION) && \
-		./configure --prefix=/usr/local --disable-static --enable-threaded-resolver --with-ca-bundle=/usr/local/etc/ssl/certs/ca-certificates.crt --enable-ipv6 --with-libidn --enable-ldap --enable-ldaps --enable-tls-srp --with-gssapi && \
+		./configure --prefix=/usr/local --disable-static --enable-threaded-resolver --with-ca-bundle=/usr/local/etc/ssl/certs/ca-certificates.crt --enable-ipv6 --enable-tls-srp --with-ssl && \
 		$(MAKE) -j 4 && \
 		$(MAKE) install DESTDIR=$(artifact)/$(package)
 		cp -v $(package).tcz.dep $(artifact)
