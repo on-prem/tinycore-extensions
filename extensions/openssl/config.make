@@ -1,6 +1,6 @@
 # Config values
 
-VERSION ?= 1.1.1e
+VERSION ?= 1.1.1g
 package := openssl
 package_name := $(package)-$(VERSION).tar.gz
 package_source := https://www.openssl.org/source/$(package_name)

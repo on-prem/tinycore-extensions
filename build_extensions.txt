@@ -1,1 +1,4 @@
+curl
+nginx
+openssh
 openssl
