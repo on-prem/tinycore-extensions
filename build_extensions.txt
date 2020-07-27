@@ -1,4 +1,1 @@
 curl
-nginx
-openssh
-openssl
