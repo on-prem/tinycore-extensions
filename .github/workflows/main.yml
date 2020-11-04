@@ -21,7 +21,7 @@ jobs:
       - name: Check if we're instructed to build this extension
         run: |
           build=$(grep "^${{ matrix.extension }}$" build_extensions.txt || true)
-          echo "::set-env name=build_extension::$build"
+          echo "build_extension=$build" >> $GITHUB_ENV
 
       - name: Build the extension (${{ matrix.extension }})
         if: env.build_extension == matrix.extension
