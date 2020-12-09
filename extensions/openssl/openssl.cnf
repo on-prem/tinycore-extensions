@@ -222,7 +222,7 @@ basicConstraints = CA:FALSE
 keyUsage = nonRepudiation, digitalSignature, keyEncipherment
 
 [ v3_ca ]
-
+subjectAltName=DNS:localhost
 
 # Extensions for a typical CA
 
