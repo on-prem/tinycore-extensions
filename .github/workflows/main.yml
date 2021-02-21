@@ -9,7 +9,7 @@ jobs:
 
     strategy:
       matrix:
-        extension: [ 'curl', 'jidoteki-admin', 'nginx', 'openssh', 'openssl', 'picolisp' ]
+        extension: [ 'curl', 'jidoteki-admin', 'nginx', 'openssh', 'openssl', 'picolisp', 'stunnel' ]
         tc_version: [ '11.0-x86_64' ]
 
     container: tatsushid/tinycore:${{ matrix.tc_version }}
