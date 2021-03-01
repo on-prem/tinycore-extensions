@@ -1,1 +1,1 @@
-stunnel
+jidoteki-admin

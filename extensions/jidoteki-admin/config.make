@@ -1,6 +1,6 @@
 # Config values
 
-VERSION ?= 1.25.0
+VERSION ?= 1.26.0
 package := jidoteki-admin
 package_name := $(package)-$(VERSION).tar.gz
 package_source := https://github.com/on-prem/jidoteki-admin/archive/v$(VERSION).tar.gz
