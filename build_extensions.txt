@@ -1,1 +1,1 @@
-jidoteki-admin
+openssl
